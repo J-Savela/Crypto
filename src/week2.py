@@ -236,7 +236,7 @@ def test_candidate(candidate):
                 print(f"Found a counterexample:\n"
                       f"h({prettyPrint(x)} *_f {prettyPrint(y)}) = {prettyPrint(lhs)}\n"
                       f"h({prettyPrint(x)}) *_g h({prettyPrint(y)}) = {prettyPrint(rhs)}\n"
-                      f"h({prettyPrint(lhs)}) != {prettyPrint(rhs)}\n")
+                      f"{prettyPrint(lhs)} != {prettyPrint(rhs)}\n")
                 still_valid = False
             lhs = trim(candidate(add_field1(x, y)))
             rhs = trim(add_field2(candidate(x), candidate(y)))
@@ -244,7 +244,7 @@ def test_candidate(candidate):
                 print(f"Found a counterexample:\n"
                       f"h({prettyPrint(x)} +_f {prettyPrint(y)}) = {prettyPrint(lhs)}\n"
                       f"h({prettyPrint(x)}) +_g h({prettyPrint(y)}) = {prettyPrint(rhs)}\n"
-                      f"h({prettyPrint(lhs)}) != {prettyPrint(rhs)}\n")
+                      f"{prettyPrint(lhs)} != {prettyPrint(rhs)}\n")
                 still_valid = False
     if still_valid:
         print(f"Isomorphism laws hold!!!")
